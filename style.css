@@ -1,3 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
 #container{
   width: 100%;
   display: grid;
@@ -8,10 +17,11 @@
 
 .top{
   grid-column:1/4;
-  background-image: url("Img/photo-1574987405618-290505bd933f .png");
+  background-image: url('https://res.cloudinary.com/elijahwale/image/upload/v1591667999/photo-1574987405618-290505bd933f_1_nd62bh.jpg');
   background-attachment:scroll;
-  background-size: 109% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
   grid-row: 1/4;
   display: grid;
   grid-template-columns: 1fr 1fr ;
@@ -28,43 +38,82 @@
   grid-template-columns: 2%, 98%;
   color:white;
   grid-template-rows: 50px 250px;
+  position: relative;
+  z-index: 1;
 }
 
-.logo{
-  grid-column: 1/2;
-  margin-left: 8%;
-  margin-top: 15px;
+.logo-img{
+  margin-left: 30px;
 }
 .display{
   grid-column:1/2;
   color:white;
   padding-left: 8%;
   padding-bottom: 10%;
+  position: relative;
+  z-index: 1;
+}
+.display p{
+  font-family: 'Montserrat', sans-serif;
+    font-weight: 600px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+.display h1{
+  font-family: Adobe Arabic, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 
 .nav{
   grid-column: 2/3;
+  display: flex;
+  justify-content: flex-end;
 }
 
-ul, li{
-  padding: 0;
-  margin: 0;
+.nav ul{
+  padding-top: 15px;
   list-style: none;
+  display: flex;
+  align-items: center;
 }
-.nav>ul>li{
-  float: left;
-  width: 13%; 
-  margin-left: 2%;
-  margin-top: 20px;
+.nav ul li{
+  margin-right: 30px;
 }
-
-.nav>ul>button{
-  border: 0;
-  border-radius: 4px;
-  height: 30px;
-  margin-top: 17px;
-  margin-left: 2%;
+.nav ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+.nav ul li a:hover{
+  text-decoration: none;
+}
+.nav ul li.active{
+  border-bottom:2px solid #fff;
+}
+.btn{
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #c80125;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  display: inline-block;
+  
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color:#000;
+  opacity: .5;
 }
 
 
@@ -81,14 +130,19 @@ ul, li{
 
 .room{
  padding-left: 3%;
+ padding-top: 30px;
+ 
 }
 
-
+.room p{
+  padding-bottom: 10px;
+}
 
 .room1{
   grid-column:1/2 ;
   background-color: rgb(48, 46, 46);
   margin:2%;
+  
 }
 .room2{
   grid-column:2/3 ;
@@ -125,16 +179,23 @@ ul, li{
   margin-left: 30%;
 }
 .p2{
-  margin-left: 25%;
+  text-align: center;
 }
+
 .room>button{
+  margin-top: 15px;
   margin-left: 40%;
   border: 0;
   border-radius: 4px;
   margin-bottom: 2%;
-  width: 100px;
-  height: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
   
+}
+.room button span{
+  padding-left: 5px;
 }
 
 a{
@@ -159,6 +220,12 @@ color:white;
  grid-column:1/3;
  padding:3%;
 }
+.btm1 p{
+  padding-bottom: 15px;
+}
+.btm2 p{
+  padding-bottom: 15px;
+}
 
 .btm2{
   grid-column:3/5;
@@ -168,13 +235,18 @@ color:white;
   grid-column:5/7;
   padding:3%;
 }
+
 .footer{
   grid-column:1/7;
   margin: 1% 0 1% 40%;
 }
 
 .btm3>p>img{
+  margin-top: 15px;
   width:8%;
+  margin-right: 5%;
+}
+.btm>p>img:not(:last-child){
   margin-right: 5%;
 }
 
